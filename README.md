@@ -19,7 +19,14 @@ module.exports = {
         query: {
           config: './conf/config.json',
         }
-      }
+      },
+      {
+        test: /\.json$/,
+        loaders: [
+          './ff-loader?{"config":"./conf/config.json"}',
+          'json-loader',
+        ]
+      },
     ]
   }
 };

@@ -41,21 +41,23 @@ function resolve(name) {
 module.exports = function() {};
 
 module.exports.pitch = function(remainingRequest, precedingRequest, data) {
-  var query       = loaderUtils.parseQuery(this.query);
-  var configPath  = query.config || false;
-  var currentPath = remainingRequest;
+  var query        = loaderUtils.parseQuery(this.query);
+  var configPath   = query.config || false;
+  var modulePathes = remainingRequest.split('!');
+  var modulePath   = modulePathes.length > 1 ? modulePathes[modulePathes.length-1] : remainingRequest;
+  var currentPath  = modulePath;
 
   if (configPath) {
     config = require(resolve(configPath));
     config = parseConfigPath(config);
 
     var ff = new FeatureFlag(config);
-    currentPath = ff.getModule(currentPath);
+    currentPath = ff.getModule(modulePath);
+
+    if (modulePathes.length > 1) {
+      currentPath = remainingRequest.replace(modulePath, currentPath);
+    }
   }
 
-  if (currentPath.indexOf('json') !== -1) {
-    return jsonLoader(require(currentPath));
-  }
-
-  return "module.exports = " + require(currentPath) + ";";
+  return "module.exports = require("+loaderUtils.stringifyRequest(this, "!!" + currentPath)+");";
 };

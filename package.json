@@ -1,6 +1,6 @@
 {
   "name": "ff-loader",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Change require module depend of config featrue flags",
   "main": "index.js",
   "scripts": {
