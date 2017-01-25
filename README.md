@@ -23,7 +23,7 @@ module.exports = {
       {
         test: /\.json$/,
         loaders: [
-          './ff-loader?{"config":"./conf/config.json"}',
+          'ff-loader?{"config":"./conf/config.json"}',
           'json-loader',
         ]
       },
