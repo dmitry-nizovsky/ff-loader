@@ -1,0 +1,24 @@
+{
+  "name": "ff-loader",
+  "version": "1.0.0",
+  "description": "Change require module depend of config featrue flags",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dmitry Nizovsky <dmitry.nizovsky@gmail.com>",
+  "dependencies": {
+    "json-loader": "^0.5.4",
+    "loader-utils": "^0.2.16"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:dmitry-nizovsky/ff-loader.git"
+  }
+}
