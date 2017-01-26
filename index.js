@@ -1,6 +1,5 @@
 var path        = require("path");
 var loaderUtils = require("loader-utils");
-var jsonLoader  = require('json-loader');
 
 function FeatureFlag(config) {
   this.config = config;
