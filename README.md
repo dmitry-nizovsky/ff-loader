@@ -32,7 +32,9 @@ module.exports = {
 };
 ```
 
-config feature flag
+#Config feature flag
+
+* add feature merged config file(json or js) one path to many path
 
 ``` javascript
 [
@@ -41,7 +43,10 @@ config feature flag
     "state": true,
     "modules": {
       "./cont/abs.js": "./cont/bs.js",
-      "./conf/app_conf.json": "./conf/ff.json"
+      "./conf/app_conf.json": [
+        "./conf/ff.json",
+        "./conf/ff-second.json"
+      ]
     }
   }
 ]
