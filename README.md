@@ -34,7 +34,7 @@ module.exports = {
 
 #Config feature flag
 
-* add feature merged config file(json or js) one path to many path
+* add feature merged config file(json or js) one path to many paths
 
 ``` javascript
 [
