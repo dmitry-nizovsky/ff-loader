@@ -12,7 +12,7 @@ module.exports.pitch = function (remainingRequest) {
 
     if (configPath) {
         var ff = new FeatureFlag();
-        config = require(ff.resolve(configPath));
+        var config = require(ff.resolve(configPath));
 
         ff.setConfig(config);
         newPath = ff.getModule(currentPath);
