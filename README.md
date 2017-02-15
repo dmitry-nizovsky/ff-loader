@@ -4,6 +4,9 @@ Feature Flag loader for webpack
 # Example use this loader
 
 ``` javascript
+var ffConfig    = require("./conf/config.json");
+var FeatureFlag = require('ff-plugin');
+
 module.exports = {
   entry: "./index.js",
   output: {
@@ -16,20 +19,32 @@ module.exports = {
         test: /.js/,
         loader: "ff-loader",
         include: /cont|conf/,
-        query: {
-          config: './conf/config.json',
-        }
       },
       {
         test: /\.json$/,
         loaders: [
-          'ff-loader?config=./conf/config.json',
+          'ff-loader',
           'json-loader',
         ]
       },
     ]
-  }
+  },
+  plugins: [
+    new FeatureFlag(ffConfig)
+  ]
 };
+```
+
+* add feature use ff in your modules
+``` javascript
+var ff = require('ff-module');
+
+if (ff.enabled('ff-section-name')) { // login-form
+  // if feature enabled do this
+}
+else {
+  // if feature disabled do this
+}
 ```
 
 #Config feature flag
