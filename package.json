@@ -19,5 +19,8 @@
   "repository": {
     "type": "git",
     "url": "git@github.com:dmitry-nizovsky/ff-loader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dmitry-nizovsky/ff-plugin/issues"
   }
 }
