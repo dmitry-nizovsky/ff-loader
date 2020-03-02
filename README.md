@@ -1,15 +1,15 @@
-# ff-loader
+# Feature Flag Loader
 Feature Flag loader for webpack
 
 # Description
-This way for feature flug good work with reactjs. You can override any file to other work for images and sass and etc.
+This way for feature flag good work with reactjs. You can override any file to other work for images and sass and etc.
 But ff-loader working only build stage and this has plus and minus
 Plus:
 - you have bundle always antual deps (if you switch one implementation to other, fisrt implementation don't be added to bundle)
 - if ff needs remove you need just rename file and remove old version it help you avoid problem after refactoring removing ff from app
 
 Minus:
-- If you want dynamically enable of disable feature flug state it possible only in runtime and you need use ff-plugin for it
+- If you want dynamically enable of disable feature flag state it possible only in runtime and you need use ff-plugin for it
 - If teammate don't know about this loader on project they are don't understand why change code don't work it possible if you create 2 implementation for ff A and state of ff A in true and teammate try changes file with first implementation.
 
 # Goal 
