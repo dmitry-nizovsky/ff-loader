@@ -1,6 +1,9 @@
 # Feature Flag Loader
 Feature Flag loader for webpack
 
+# Example Use
+https://github.com/dmitry-nizovsky/example-use
+
 # Description
 This way for feature flag good work with reactjs. You can override any file to other work for images and sass and etc.
 But ff-loader working only build stage and this has plus and minus
@@ -61,7 +64,7 @@ else {
 }
 ```
 
-#Config feature flag
+# Config feature flag
 
 * add feature merged config file(json or js) one path to many paths
 
